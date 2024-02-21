@@ -1,0 +1,11 @@
+<%= render "restaurants/navbar", restaurant: @restaurant %>
+
+<div class="container"><h1>Welcome on Yelp !</h1>
+<h2>All restaurants close to you !</h2>
+<% @restaurants.each do |restaurant| %>
+<h4><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
+<ul><li><%= restaurant.category %></li>
+<li><%= restaurant.address %></li>
+<li><%= restaurant.phone_number %></li></ul>
+<% end %>
+</div>
